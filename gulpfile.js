@@ -12,6 +12,7 @@ const browserSync = require('browser-sync').create();
 const uglify = require('gulp-uglify-es').default;
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
+const ghpages = require('gh-pages');
 const del = require('del');
 
 function browsersync() {
@@ -68,7 +69,6 @@ function scripts() {
         .pipe(browserSync.stream())
 }
 
-
 function styles() {
     return src('app/scss/style.scss')
         .pipe(scss({
@@ -99,7 +99,6 @@ function watching() {
     watch(['app/scss/**/*.scss'], styles);
     watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
     watch(['app/*.html']).on('change', browserSync.reload);
-
 }
 
 

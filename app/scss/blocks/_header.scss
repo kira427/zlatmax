@@ -13,7 +13,7 @@
 .top-header {
 	background-color: $color-dark;
 	color: $color-white;
-	padding: 10px;
+	padding: 10px 20px;
 	&__container {
 		display: flex;
 		align-items: center;
@@ -82,7 +82,7 @@
 //------------BODY-HEADER---------------------
 
 .body-header {
-	padding: 10px 0;
+	padding: 10px 20px 10px 0;
 	background: #ecf1f2;
 	&__container {
 		display: flex;
@@ -284,6 +284,7 @@
 		justify-content: center;
 	}
 	&__body {
+        flex: 1 1 auto;
 		display: flex;
 		font-weight: $fw-500-Medium;
 		font-size: $fz-standard;
