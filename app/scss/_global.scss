@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
+
+
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $Font-family;
+	font-size: $fz-middle;
+	font-weight: $fw-500-Medium;
+	color: $color-black;
+	overflow-x: hidden;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+.container {
+	padding: 0 20px;
+	max-width: 1630px;
+	margin: 0 auto;
+}
+
+.modal-overlay {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100%;
+	opacity: 0;
+    z-index: $z-index100;
+	visibility: hidden;
+	transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.modal-body {
+	background-color: #fff;
+	max-width: 500px;
+    border-radius: 15px;
+    width: 100%;
+	min-height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	display: none;
+}
+
+.modal-body-text {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.modal-overlay--visible {
+	opacity: 1;
+	visibility: visible;
+	transition: all 0.3s ease-in-out;
+}
+
+.modal--visible {
+	display: block;
+}

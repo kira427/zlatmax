@@ -1,0 +1,12 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'libs';
+@import 'global';
+
+//blocks------------------
+@import 'blocks/header';
+@import'blocks/main';
+@import'blocks/footer';
+
+@import 'media';
