@@ -4,8 +4,10 @@ const headerList = document.querySelector('.js-header-list');
 
 function headerPhones() {    
     headerArrow.addEventListener('click', () => {
-        headerList.classList.toggle('_active')
-        headerArrow.classList.toggle('_active')
+        console.log('999999999999');
+        
+        headerList.classList.toggle('active')
+        headerArrow.classList.toggle('active')
     })
 }
 headerPhones();

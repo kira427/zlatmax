@@ -19,13 +19,19 @@
 		gap: 20px;
 		min-height: 50px;
 		.top-header__container-favorits {
-			//display: none;
+			display: none;
+		}
+		.top-header__container-cart-header {
+			display: none;
 		}
 		@media (max-width: 992px) {
 			.top-header__container-phones {
 				display: flex;
 			}
 			.top-header__container-favorits {
+				display: flex;
+			}
+			.top-header__container-cart-header {
 				display: flex;
 			}
 		}
@@ -46,6 +52,9 @@
 		transition: all 0.4s ease;
 		span {
 			transition: all 0.4s ease;
+			@media (max-width: 992px) {
+				display: none;
+			}
 			&:hover {
 				text-decoration: underline;
 			}
@@ -188,6 +197,9 @@
 	max-width: 377px;
 	width: 100%;
 	position: relative;
+	@media (max-width: 992px) {
+		max-width: 100%;
+	}
 	&__button {
 		position: absolute;
 		cursor: pointer;
@@ -228,6 +240,9 @@
 	display: flex;
 	align-items: center;
 	column-gap: 40px;
+	@media (max-width: 992px) {
+		display: none;
+	}
 	&__location {
 		display: inline-flex;
 		align-items: center;
@@ -235,6 +250,9 @@
 		line-height: 22px;
 		color: $color-black;
 		margin: 0 0 0 10px;
+		@media (max-width: 992px) {
+			display: none;
+		}
 	}
 	&__location-icon {
 		width: 17px;
@@ -247,11 +265,11 @@
 		display: inline-block;
 		flex: 0 0 28px;
 		height: 27px;
-	}
-	&__favorits-icon {
-		width: 100%;
 		@media (max-width: 992px) {
 			display: none;
+		}
+		&__favorits-icon {
+			width: 100%;
 		}
 	}
 	&__cart {
@@ -286,7 +304,7 @@
 		font-weight: $fw-700-bold;
 		cursor: pointer;
 		transition: transform 0.5s ease;
-		&._active {
+		&.active {
 			transform: rotate(180deg);
 			top: -6px;
 		}
@@ -304,7 +322,7 @@
 		padding: 15px;
 		border-radius: 10px;
 		transition: transform 0.7s ease 0s;
-		&._active {
+		&.active {
 			display: block;
 			visibility: visible;
 			opacity: 1;
@@ -333,14 +351,17 @@
 			transform: translateY(-2px);
 		}
 	}
-	@media (max-width: 992px) {
-		display: none;
-	}
+	// @media (max-width: 992px) {
+	// 	display: none;
+	// }
 }
 .cart-header {
 	display: flex;
 	align-items: center;
 	column-gap: 15px;
+	@media (max-width: 992px) {
+		display: none;
+	}
 	&__icons {
 		position: relative;
 		cursor: pointer;
