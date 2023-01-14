@@ -16,7 +16,10 @@
             <div class="header__top top-header">
                 <div class="top-header__container container">
 
-                    <div hidden class="actions-header__phones phones-header top-header__container-phones ">
+                    <div hidden class="actions-header__phones phones-header top-header__container-phones">
+                        <a hidden class="phones-header__link-phone" href="">
+                            <img class="phones-header__link-phone-icon" src="images/icons/phone.svg" alt="icon">
+                        </a>
                         <div class="phones-header__items">
                             <div class="phones-header__inner">
                                 <a class="phones-header__tel" href="tel:88007774967">8-800-777-49-67
@@ -67,19 +70,35 @@
                             </li>
                         </ul>
                     </nav>
+
                     <a class="top-header__user" href="">
                         <img class="top-header__user-img" src="images/icons/user.svg" alt="icon">
                         <span>Личный кабинeт</span>
                     </a>
+
                     <a class="actions-header__favorits top-header__container-favorits" href="#">
                         <img class="actions-header__favorits-icon" src="images/icons/white-favarits.svg" alt="icon">
                     </a>
+
+                    <a class="actions-header__cart cart-header top-header__container-cart-header" href="#">
+                        <div class="cart-header__icons">
+                            <img class="cart-header__icon" src="images/icons/white-basket.svg" alt="icon">
+                            <span class="cart-header__span">3</span>
+                        </div>
+
+                        <div class="cart-header__body">
+                            <div class="cart-header__summ">0 р.</div>
+                            <div class="cart-header__link">Оформить заказ
+                            </div>
+                        </div>
+                    </a>
+
                     <nav hidden class="menu">
-                        <button class="menu__btn icon-menu">
-                            <span></span>
+                        <button class="menu__btn js-menu-btn">
+                            <span class="menu__btn-center"></span>
                         </button>
                         <div class="menu__body">
-                            <ul class="menu-top-header__list top-menu__body-list">
+                            <ul class="menu-top-header__list top-menu__body-list js-top-menu__list">
                                 <li class="menu-top-header__item">
                                     <a class="menu-top-header__link menu-top-header__link-catalog" href="#">
                                         Каталог товаров
@@ -131,7 +150,7 @@
                         <div class="actions-header__phones phones-header">
                             <div class="phones-header__items">
                                 <div class="phones-header__inner">
-                                    <a class="phones-header__tel" href="tel:88007774967">8-800-777-49-67
+                                    <a class="phones-header__tel" href="tel:88007774967"><span>8-800-777-49-67</span>
                                     </a>
                                     <button class="phones-header__arrow js-header-arrow" type="button">
                                         <ion-icon name="chevron-down-outline"></ion-icon>
