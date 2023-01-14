@@ -1,11 +1,20 @@
-//выподающий список
+//-------------Menu-burger----------------------
+const menuBtn = document.querySelector('.js-menu-btn');
+const menuBody = document.querySelector('.js-top-menu__list');
+
+function menuBodyOpen() {
+    menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('active');
+        menuBody.classList.toggle('menu-open');
+    })
+}
+menuBodyOpen();
+//-------------выподающий список-----------------
 const headerArrow = document.querySelector('.js-header-arrow');
 const headerList = document.querySelector('.js-header-list');
 
-function headerPhones() {    
+function headerPhones() {
     headerArrow.addEventListener('click', () => {
-        console.log('999999999999');
-        
         headerList.classList.toggle('active')
         headerArrow.classList.toggle('active')
     })
@@ -74,7 +83,18 @@ function catalogSubMenu() {
             }
             e.preventDefault();
         }
+
+        // if (targetElement.closest('.menu-top-header__link-catalog')) {
+        //     document.documentElement.classList.add('catalor-open');
+        //     e.preventDefault();
+        // }
     }
 }
 catalogSubMenu();
+
+const linkCatalog = document.querySelector('.menu-top-header__link-catalog');
+const menuCatalog = document.querySelector('.menu-catalog');
+linkCatalog.addEventListener('click', () => {    
+    menuCatalog.classList.toggle('catalog-open');
+})
 //--------------------------------------------------------

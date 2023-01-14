@@ -39,6 +39,7 @@ $z-index-1000: 1000;
 $z-index200: 200;
 $z-index100: 100;
 $z-index-5: 5;
+$z-index-6: 6;
 $z-index-100: -100;
 $z-index-200: -200;
 //width-------------------------------
@@ -67,11 +68,11 @@ $pad: 10px;
 //-----button-menu---------------
 %menu__btn {
 	position: absolute;
-    right: 20px;
-    top: 28px;
-    display: inline-flex;
-    min-width: 30px;
-	height: 18px;
+	right: 20px;
+	top: 24px;
+	display: inline-flex;
+	min-width: 35px;
+	height: 30px;
 	cursor: pointer;
 	z-index: $z-index-5;
 	background-color: transparent;
@@ -79,38 +80,53 @@ $pad: 10px;
 	span {
 		position: absolute;
 		width: 100%;
-		height: 2px;
+		height: 3px;
 		left: 0;
-		top: 6px;
+		top: 8px;
 		background: $color-white;
 		&::after {
 			content: "";
 			position: absolute;
-			top: -7px;
+			top: -8px;
 			left: 0;
 			width: 100%;
-			height: 2px;
+			height: 3px;
 			background: $color-white;
+            transition: all .5s ease;
 		}
 		&::before {
 			content: "";
 			position: absolute;
-			top: 8px;
+			top: 9px;
 			left: 0;
 			width: 100%;
-			height: 2px;
+			height: 3px;
 			background: $color-white;
+            transition: all .5s ease;
+		}
+	}
+	&.active {
+        span {
+            background-color: $color-yellow;
+        }
+		span::after {
+            transform: rotate(48deg);
+            left: 19px;
+            width: 50%;
+            top: -7px;
+            background-color: $color-yellow;
+		}
+	}
+    &.active {
+		span::before {
+            transform: rotate(-49deg);
+            left: 19px;
+            width: 50%;
+            top: 8px;
+            background-color: $color-yellow;
 		}
 	}
 }
 
-//     @media (max-width: 992px) {
-// 	.menu__btn {
-//         flex: 0 0 30px;
-// 		display: block;
-// 	}
-// }
 
 //--------------------------------
-
-
