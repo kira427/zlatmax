@@ -40,6 +40,8 @@ $z-index200: 200;
 $z-index100: 100;
 $z-index-5: 5;
 $z-index-6: 6;
+$z-index-10: 10;
+$z-index-12: 12;
 $z-index-100: -100;
 $z-index-200: -200;
 //width-------------------------------
@@ -67,16 +69,27 @@ $pad: 10px;
 
 //-----button-menu---------------
 %menu__btn {
-	position: absolute;
-	right: 20px;
-	top: 24px;
+	position: fixed;
+	right: 30px;
+	top: 26px;
 	display: inline-flex;
 	min-width: 35px;
 	height: 30px;
 	cursor: pointer;
-	z-index: $z-index-5;
+	z-index: $z-index-12;
 	background-color: transparent;
 	border: none;
+	transition: all 0.3s ease 0.1s;
+	&.active:hover span {
+		background-color: $color-white;
+		transform: translateX(4px);
+		&::after {
+			background-color: $color-white;
+		}
+		&::before {
+			background-color: $color-white;
+		}
+	}
 	span {
 		position: absolute;
 		width: 100%;
@@ -84,6 +97,7 @@ $pad: 10px;
 		left: 0;
 		top: 8px;
 		background: $color-white;
+		transition: all 0.5s ease 0.1s;
 		&::after {
 			content: "";
 			position: absolute;
@@ -92,7 +106,7 @@ $pad: 10px;
 			width: 100%;
 			height: 3px;
 			background: $color-white;
-            transition: all .5s ease;
+			transition: all 0.5s ease;
 		}
 		&::before {
 			content: "";
@@ -102,31 +116,79 @@ $pad: 10px;
 			width: 100%;
 			height: 3px;
 			background: $color-white;
-            transition: all .5s ease;
+			transition: all 0.5s ease;
 		}
 	}
 	&.active {
-        span {
-            background-color: $color-yellow;
-        }
-		span::after {
-            transform: rotate(48deg);
-            left: 19px;
-            width: 50%;
-            top: -7px;
-            background-color: $color-yellow;
+		span {
+			background-color: $color-yellow;
 		}
-	}
-    &.active {
+		span::after {
+			transform: rotate(48deg);
+			left: 19px;
+			width: 50%;
+			top: -7px;
+			background-color: $color-yellow;
+		}
 		span::before {
-            transform: rotate(-49deg);
-            left: 19px;
-            width: 50%;
-            top: 8px;
-            background-color: $color-yellow;
+			transform: rotate(-49deg);
+			left: 19px;
+			width: 50%;
+			top: 8px;
+			background-color: $color-yellow;
 		}
 	}
 }
 
+%menu__btn-catalog {
+	position: absolute;
+	left: 20px;
+	top: 11px;
+	display: flex;
+	align-items: center;
+	padding: 5px 10px;
+	height: 50px;
+	cursor: pointer;
+	z-index: $z-index-10;
+	color: $color-yellow;
+	gap: 5px;
+	background-color: transparent;
+	border: none;
+	&:hover ion-icon {
+		transform: translateX(-5px);
+	}
+	span {
+		font-size: $fz-small;
+	}
+	ion-icon {
+		transition: all 0.5s;
+		font-size: 40px;
+	}
+}
 
+%menu__btn-sub-menu {
+	position: absolute;
+	left: 20px;
+	top: 12px;
+	display: flex;
+	align-items: center;
+	padding: 5px 10px;
+	height: 50px;
+	cursor: pointer;
+	z-index: $z-index-10;
+	color: $color-yellow;
+	gap: 5px;
+	background-color: transparent;
+	border: none;
+	&:hover ion-icon {
+		transform: translateX(-5px);
+	}
+	span {
+		font-size: $fz-small;
+	}
+	ion-icon {
+		transition: all 0.5s;
+		font-size: 40px;
+	}
+}
 //--------------------------------

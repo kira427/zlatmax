@@ -1,19 +1,22 @@
 //-------------Menu-burger----------------------
 const menuBtn = document.querySelector('.js-menu-btn');
 const menuBody = document.querySelector('.js-top-menu__list');
+const menuCatalogBtn = document.querySelector('.js-menu-catalog')
 
 function menuBodyOpen() {
-    menuBtn.addEventListener('click', () => {
+    menuBtn.addEventListener('click', function () {
         menuBtn.classList.toggle('active');
         menuBody.classList.toggle('menu-open');
+        document.documentElement.classList.remove('catalor-open');
+        document.querySelector('.sub-menu-open').classList.remove('sub-menu-open');
+        document.documentElement.classList.remove('_sub-menu-open');
     })
 }
 menuBodyOpen();
 //-------------выподающий список-----------------
-const headerArrow = document.querySelector('.js-header-arrow');
-const headerList = document.querySelector('.js-header-list');
-
 function headerPhones() {
+    const headerArrow = document.querySelector('.js-header-arrow');
+    const headerList = document.querySelector('.js-header-list');
     headerArrow.addEventListener('click', () => {
         headerList.classList.toggle('active')
         headerArrow.classList.toggle('active')
@@ -22,11 +25,13 @@ function headerPhones() {
 headerPhones();
 
 //------------------Модальное окно phones-header-----
-const btn = document.querySelectorAll('.btn');
-const modalOverlay = document.querySelector('.modal-overlay ');
-const modals = document.querySelectorAll('.modal-body');
+
 
 function modalPopup() {
+    const btn = document.querySelectorAll('.btn');
+    const modalOverlay = document.querySelector('.modal-overlay ');
+    const modals = document.querySelectorAll('.modal-body');
+
     btn.forEach((el) => {
         el.addEventListener('click', (e) => {
             let path = e.currentTarget.getAttribute('data-path');
@@ -54,6 +59,7 @@ modalPopup();
 
 //-----------------------CATALOG-SUB-MENU------------------
 function catalogSubMenu() {
+
     document.addEventListener('click', documentActions);
 
     const menuBlocks = document.querySelectorAll('.sub-menu-catalog__block');
@@ -69,7 +75,6 @@ function catalogSubMenu() {
         if (targetElement.closest('[data-parent]')) {
             const subMenuId = targetElement.dataset.parent ? targetElement.dataset.parent : null;
             const subMenu = document.querySelector(`[data-submenu="${subMenuId}"]`);
-            const catalogMenu = document.querySelector('.js-catalog-header')
             if (subMenu) {
                 const activeLink = document.querySelector('.sub-menu-active');
                 const activeBlock = document.querySelector('.sub-menu-open');
@@ -77,24 +82,37 @@ function catalogSubMenu() {
                 if (activeLink && activeLink !== targetElement) {
                     activeLink.classList.remove('sub-menu-active');
                     activeBlock.classList.remove('sub-menu-open');
+                    document.documentElement.classList.remove('_sub-menu-open');
                 }
+                document.documentElement.classList.toggle('_sub-menu-open');
                 targetElement.classList.toggle('sub-menu-active');
                 subMenu.classList.toggle('sub-menu-open');
             }
             e.preventDefault();
         }
 
-        // if (targetElement.closest('.menu-top-header__link-catalog')) {
-        //     document.documentElement.classList.add('catalor-open');
-        //     e.preventDefault();
-        // }
+        if (targetElement.closest('.menu-top-header__link-catalog')) {
+            document.documentElement.classList.add('catalor-open');
+            e.preventDefault();
+
+            function menuCatalogOpen() {
+                const menuCatalogBtn = document.querySelector('.js-menu-catalog-btn');
+                const menuSubMenugBtn = document.querySelector('.js-menu-sub-menu-btn');
+                menuCatalogBtn.addEventListener('click', function () {
+                    document.documentElement.classList.remove('catalor-open');
+                    document.querySelector('.sub-menu-active') ? document.querySelector('.sub-menu-active').classList.remove('sub-menu-active') : null;
+                    document.querySelector('.sub-menu-open') ? document.querySelector('.sub-menu-open').classList.remove('sub-menu-open') : null;
+                })
+                menuSubMenugBtn.addEventListener('click', function () {
+                    document.documentElement.classList.remove('_sub-menu-open');
+                })
+            }
+            menuCatalogOpen();
+
+
+        }
     }
 }
 catalogSubMenu();
 
-const linkCatalog = document.querySelector('.menu-top-header__link-catalog');
-const menuCatalog = document.querySelector('.menu-catalog');
-linkCatalog.addEventListener('click', () => {    
-    menuCatalog.classList.toggle('catalog-open');
-})
 //--------------------------------------------------------
