@@ -16,6 +16,7 @@ $color-button: #e8c30091;
 //font-size------------
 $fz-big: 50px;
 $fz-normal: 22px;
+$fz-20: 20px;
 $fz-middle: 18px;
 $fz-standard: 16px;
 $fz-small: 14px;
@@ -53,11 +54,7 @@ $pad: 10px;
 //Шаблоны==============================
 // @extend %title-font;
 %title-font {
-	font-family: $Font-family;
-	font-weight: 700;
-	font-size: $fz-big;
-	letter-spacing: 3px;
-	color: #0c2278db;
+    font-size: 13px;
 }
 //Миксины @include view(19px,#000);=========
 @mixin view($fz, $cl) {
@@ -69,7 +66,7 @@ $pad: 10px;
 
 //-----button-menu---------------
 %menu__btn {
-	position: fixed;
+	position: absolute;
 	right: 30px;
 	top: 26px;
 	display: inline-flex;

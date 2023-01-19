@@ -115,4 +115,35 @@ function catalogSubMenu() {
 }
 catalogSubMenu();
 
-//--------------------------------------------------------
+//---------------home-slider-----------------------------------------
+const swiper = new Swiper(".main-block__slider", {
+    //modules: [Navigation, Pagination, Autoplay],
+    observer: true,
+    observeParents: true,
+    slidesPerView: 1,
+    spaceBetween: 40,
+    loop: true,
+    speed: 1000,
+    autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+    },
+
+    pagination: {
+        el: ".controll-main-block__dotts",
+        clickable: true,
+    },
+    //------------------------счетчик-фракции--------------------------------
+    on: {
+        init: function (swiper) {
+            const allSlides = document.querySelector('.fraction-controll__all');
+            const allSlidesItems = document.querySelectorAll('.slide-main-block:not(.swiper-slide-duplicate)');
+            allSlides.innerHTML = allSlidesItems.length < 10 ? `0${allSlidesItems.length}` : allSlidesItems.length;
+        },
+        slideChange: function (swiper) {
+            const currentSlide = document.querySelector('.fraction-controll__current');
+            currentSlide.innerHTML = swiper.realIndex + 1 < 10 ? `0${swiper.realIndex + 1}` : swiper.realIndex + 1;
+        }
+    }
+});
+//---------------------------------------------------------------------------
