@@ -117,7 +117,6 @@ catalogSubMenu();
 
 //---------------home-slider-----------------------------------------
 const swiper = new Swiper(".main-block__slider", {
-    //modules: [Navigation, Pagination, Autoplay],
     observer: true,
     observeParents: true,
     slidesPerView: 1,
@@ -146,4 +145,152 @@ const swiper = new Swiper(".main-block__slider", {
         }
     }
 });
-//---------------------------------------------------------------------------
+//-------------------------рейтинг звезд--------------------------------------------------
+function ratingStars() {
+    const ratings = document.querySelectorAll('.rating');
+    if (ratings.length > 0) {
+        initRatings();
+    }
+
+    function initRatings() {
+        let ratingActive, ratingValue;
+        //перебераем все рейтенги-----
+        for (let index = 0; index < ratings.length; index++) {
+            const rating = ratings[index];
+            initRating(rating);
+        }
+        //инициализируем конкретный рейтинг
+        function initRating(rating) {
+            initRatingVars(rating);
+
+            setRatingActiveWidth();
+
+            if (rating.classList.contains('rating-set')) {
+                setRating(rating);
+            }
+        }
+
+        //функция инициализация переменных (ratingActive, ratingValue)---
+        function initRatingVars(rating) {
+            ratingActive = rating.querySelector('.rating__active');
+            ratingValue = rating.querySelector('.rating__value');
+        }
+
+        //функция изъменения активных звезд
+        function setRatingActiveWidth(index = ratingValue.innerHTML) {
+            const ratingActiveWidth = index / 0.05;
+            ratingActive.style.width = `${ratingActiveWidth}%`;
+        }
+        //функция возможности указывать оценку
+        function setRating(rating) {
+            const ratingItems = rating.querySelectorAll('.rating__item');
+            for (let index = 0; index < ratingItems.length; index++) {
+                const ratingItem = ratingItems[index];
+                ratingItem.addEventListener('mouseenter', function (e) {
+                    //Обновление переменной
+                    initRatingVars(rating);
+                    //Обновление активных звезд
+                    setRatingActiveWidth(ratingItem.value);
+                });
+                ratingItem.addEventListener('mouseleave', function (e) {
+                    //Обновление активных звезд
+                    setRatingActiveWidth();
+                });
+                ratingItem.addEventListener('click', function (e) {
+                    //Обновление переменной
+                    initRatingVars(rating);
+
+                    if (rating.dataset.ajax) {
+                        //Отправить на сервер
+                        setRatingValue(ratingItem.value, rating);
+                    } else {
+                        ratingValue.innerHTML = index + 1;
+                        setRatingActiveWidth();
+                    }
+                })
+            }
+        }
+    }
+}
+ratingStars();
+//------------------products-slider-------------------
+const swiperProducts = new Swiper(".products-slider__slider", {
+
+    observer: true,
+    observeParents: true,
+    slidesPerView: 4,
+    spaceBetween: 30,
+    loop: true,
+    speed: 3500,
+    autoplay: {
+        delay: 4500,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".products-slider__dotts",
+        clickable: true,
+    },
+    breakpoints: {
+        310: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },
+        675: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        1000: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
+        1340: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+        },
+    },
+
+});
+
+//------------------new-products-slider-------------------
+const swiperNewProducts = new Swiper(".new-products__slider", {
+
+    observer: true,
+    observeParents: true,
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    speed: 3500,
+    autoplay: {
+        delay: 4500,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".new-products__slider-dotts",
+        clickable: true,
+    },
+    breakpoints: {
+
+        310: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },
+        675: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        965: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
+        1080: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        1340: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+
+    },
+
+});

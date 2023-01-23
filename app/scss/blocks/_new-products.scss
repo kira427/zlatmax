@@ -1,0 +1,120 @@
+.page {
+	&__new-products {
+	}
+}
+.new-products {
+	background: url("../images/new-products/bj.jpg");
+	background-position: bottom;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	padding-top: 45px;
+	margin-bottom: 120px;
+	&::before {
+		content: "";
+		position: absolute;
+		background-color: #fff;
+		height: 46px;
+		right: 0;
+		top: 0;
+		border: none;
+		width: 900px / 1920px * 100%;
+	}
+	&__inner {
+		padding: 55px 0;
+	}
+
+	&__container {
+		display: grid;
+		row-gap: 20px;
+		@media (min-width: 1080px) {
+			grid-template-columns: 400px 1fr;
+			align-items: start;
+		}
+	}
+
+	&__body {
+		padding-right: 70px;
+		@media (max-width: 1340px) {
+			padding-right: 30px;
+		}
+		@media (max-width: 1080px) {
+			padding-right: 0px;
+		}
+	}
+	&__section {
+		position: relative;
+		z-index: 2;
+	}
+	&__title {
+		color: $color-white;
+		margin-bottom: 30px;
+		@media (max-width: 1080px) {
+			margin-bottom: 15px;
+		}
+	}
+	&__text {
+		line-height: 27px;
+		letter-spacing: 0.03em;
+		color: rgba(255, 255, 255, 0.7);
+		margin-bottom: 60px;
+		@media (max-width: 1080px) {
+			margin-bottom: 30px;
+		}
+		@media (max-width: 450px) {
+			margin-bottom: 12px;
+		}
+	}
+	&__link {
+		@extend %link-arrow;
+	}
+	&__content {
+		min-width: 0;
+		padding: 37px 0 0 0;
+		@media (max-width: 675px) {
+			padding: 10px 0 0 0;
+		}
+	}
+}
+.swiper {
+    padding-bottom: 15px;
+}
+.new-products__slider-dotts {
+	display: grid;
+	grid-auto-flow: column;
+	justify-content: center;
+	gap: 8px;
+	margin-top: 50px;
+	z-index: 5;
+}
+.swiper-pagination-bullet {
+	height: 2px;
+	width: 26px;
+	background-color: #898989;
+	opacity: 0.8;
+	cursor: pointer;
+	&::before {
+		position: absolute;
+		content: "";
+		background-color: $color-yellow;
+		left: 0px;
+		top: -5px;
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		box-shadow: 0px 0px 10px 4px rgba(232, 170, 49, 0.66);
+	}
+}
+.swiper-pagination-bullet-active {
+	background-color: $color-yellow;
+	position: relative;
+	transition: left 0.5s linear 0s;
+	&::before {
+		transition: left 3.5s linear 0s;
+		left: 26px;
+	}
+}
+.content-title {
+	@extend %content-title;
+}
+

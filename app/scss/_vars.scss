@@ -54,7 +54,7 @@ $pad: 10px;
 //Шаблоны==============================
 // @extend %title-font;
 %title-font {
-    font-size: 13px;
+	font-size: 13px;
 }
 //Миксины @include view(19px,#000);=========
 @mixin view($fz, $cl) {
@@ -63,7 +63,7 @@ $pad: 10px;
 }
 
 //Математика width: 250px / 1420px *100%;
-
+//=============================================================================================
 //-----button-menu---------------
 %menu__btn {
 	position: absolute;
@@ -186,6 +186,115 @@ $pad: 10px;
 	ion-icon {
 		transition: all 0.5s;
 		font-size: 40px;
+	}
+}
+
+%content-title {
+	font-weight: $fw-700-bold;
+	font-size: 30px;
+	line-height: 46px;
+	letter-spacing: 0.05em;
+	color: $color-dark;
+}
+
+%more-slider {
+	font-weight: $fw-600-SemiBold;
+	font-size: $fz-middle;
+	line-height: 46px;
+	letter-spacing: 0.05em;
+	color: rgba(20, 20, 20, 0.58);
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
+	transition: color 0.3s ease;
+	&:hover {
+		color: rgba(20, 20, 20, 1);
+	}
+	&:hover ion-icon {
+		transform: translateX(3px);
+	}
+	ion-icon {
+		color: $color-yellow;
+		font-size: 22px;
+		transition: transform 0.3s ease;
+	}
+}
+
+%button {
+	font-weight: $fw-600-SemiBold;
+	font-size: 18px;
+	line-height: 46px;
+	color: $color-white;
+	background-color: $color-yellow;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	height: 50px;
+	width: 100%;
+	border: none;
+	justify-content: center;
+	cursor: pointer;
+	box-shadow: 0px 4px 20px rgba(232, 170, 49, 0.43);
+	border-radius: 3px;
+	transition: box-shadow 0.5s ease;
+	&:hover {
+		box-shadow: 0px 3px 9px rgba(20, 20, 20, 0.5);
+	}
+	ion-icon {
+		font-size: $fz-20;
+	}
+}
+
+%link-arrow {
+	font-weight: $fw-600-SemiBold;
+	font-size: $fz-20;
+	line-height: 46px;
+	letter-spacing: 0.05em;
+	color: $color-yellow;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	&:hover ion-icon {
+		transform: translateX(3px);
+	}
+	ion-icon {
+		font-size: 22px;
+		transition: transform 0.3s ease;
+	}
+}
+
+%dotts {
+	display: grid;
+	grid-auto-flow: column;
+	justify-content: center;
+	gap: 15px;
+	margin-top: 50px;
+	.swiper-pagination-bullet {
+		height: 2px;
+		width: 26px;
+		background-color: #898989;
+		opacity: 0.8;
+		cursor: pointer;
+		&::before {
+			position: absolute;
+			content: "";
+			background-color: $color-yellow;
+			left: 0px;
+			top: -5px;
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			box-shadow: 0px 0px 10px 4px rgba(232, 170, 49, 0.66);
+		}
+	}
+	.swiper-pagination-bullet-active {
+		background-color: $color-yellow;
+		position: relative;
+		transition: left 0.5s linear 0s;
+		&::before {
+			transition: left 3.5s linear 0s;
+			left: 26px;
+		}
 	}
 }
 //--------------------------------
