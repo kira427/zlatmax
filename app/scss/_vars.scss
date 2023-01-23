@@ -62,7 +62,7 @@ $pad: 10px;
 	color: $cl;
 }
 
-//Математика width: 250px / 1420px *100%;
+//Математика width: calc(900px/1920px * 100%);;
 //=============================================================================================
 //-----button-menu---------------
 %menu__btn {
@@ -197,6 +197,14 @@ $pad: 10px;
 	color: $color-dark;
 }
 
+%title {
+	font-weight: $fw-700-bold;
+	font-size: 24px;
+	line-height: 29px;
+	color: $color-dark;
+	margin-bottom: 25px;
+}
+
 %more-slider {
 	font-weight: $fw-600-SemiBold;
 	font-size: $fz-middle;
@@ -297,4 +305,5 @@ $pad: 10px;
 		}
 	}
 }
+
 //--------------------------------

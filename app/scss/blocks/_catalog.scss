@@ -1,0 +1,77 @@
+.page {
+	&__header {
+		margin: 30px 0;
+	}
+	&__container {
+	}
+	&__title {
+		@extend %title;
+	}
+	&__breadcrumbs {
+	}
+}
+.page-inner {
+}
+
+.catalog {
+	margin-bottom: 120px;
+	@media (max-width: 500px) {
+		margin-bottom: 60px;
+	}
+	&__container {
+	}
+
+	&__body {
+		display: grid;
+    grid-template-columns: 375px 1fr;
+		gap: 30px;
+	}
+	&__filter {
+	}
+	&__content {
+	}
+	&__control {
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: 20px;
+	}
+
+	&__products {
+	display: grid;
+  column-gap: 30px;
+  row-gap: 30px;
+		grid-template-columns: repeat(auto-fill, minmax(290px, 375px));
+	}
+}
+.product-card {
+	&__img-link {
+	}
+	&__body {
+	}
+	&__title {
+	}
+	&__link-title {
+	}
+	&__info {
+	}
+	&__rating {
+	}
+	&__footer {
+	}
+	&__price {
+	}
+	&__box {
+	}
+	&__compare {
+	}
+	&__favorite {
+	}
+	&__btn {
+	}
+}
+.info-prouct-card {
+	&__size {
+	}
+	&__materials {
+	}
+}

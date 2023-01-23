@@ -10,6 +10,9 @@
 	position: relative;
 	padding-top: 45px;
 	margin-bottom: 120px;
+	@media (max-width: 500px) {
+		margin-bottom: 60px;
+	}
 	&::before {
 		content: "";
 		position: absolute;
@@ -18,7 +21,7 @@
 		right: 0;
 		top: 0;
 		border: none;
-		width: 900px / 1920px * 100%;
+  width: calc(900px/1920px * 100%);
 	}
 	&__inner {
 		padding: 55px 0;
@@ -77,7 +80,7 @@
 	}
 }
 .swiper {
-    padding-bottom: 15px;
+	padding-bottom: 15px;
 }
 .new-products__slider-dotts {
 	display: grid;
@@ -117,4 +120,3 @@
 .content-title {
 	@extend %content-title;
 }
-
