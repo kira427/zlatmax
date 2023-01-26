@@ -1,6 +1,7 @@
 {
 	"dependencies": {
-		"init": "^0.1.2"
+		"init": "^0.1.2",
+		"nouislider": "^15.6.1"
 	},
 	"name": "gulp-project",
 	"version": "1.0.0",
@@ -22,7 +23,7 @@
 		"slick-carousel": "^1.8.1"
 	},
 	"scripts": {
-        "deploy": "gh-pages -d dist",
+		"deploy": "gh-pages -d dist",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "kirill",

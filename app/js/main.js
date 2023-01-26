@@ -118,10 +118,9 @@ const swiper = new Swiper(".main-block__slider", {
   loop: true,
   speed: 1000,
   autoplay: {
-    delay: 3500,
+    delay: 5000,
     disableOnInteraction: false,
   },
-
   pagination: {
     el: ".controll-main-block__dotts",
     clickable: true,
@@ -313,3 +312,155 @@ let select = function () {
   }
 };
 select();
+
+//-----------------range-slider-1------------------------
+function rangeSliders1() {
+  const rangeSlider = document.getElementById('range-slider');
+
+  if (rangeSlider) {
+    noUiSlider.create(rangeSlider, {
+      start: [500, 20000],
+      connect: true,
+      step: 1,
+      //tooltips: [true, true],
+      range: {
+        'min': [500],
+        'max': [20000]
+      }
+    });
+    const input0 = document.getElementById('input-0');
+    const input1 = document.getElementById('input-1');
+    const inputs = [input0, input1];
+    rangeSlider.noUiSlider.on('update', function (values, handle) {
+      inputs[handle].value = Math.round(values[handle]);
+    })
+    const setRangeSlider = (i, value) => {
+      let arr = [null, null];
+      arr[i] = value;
+      rangeSlider.noUiSlider.set(arr);
+    };
+
+    inputs.forEach((el, index, ) => {
+      el.addEventListener('change', (e) => {
+        setRangeSlider(index, e.currentTarget.value);
+      })
+    })
+  }
+}
+rangeSliders1();
+//-----------------range-slider-2------------------------
+function rangeSliders2() {
+  const rangeSlider = document.getElementById('range-slider-2');
+
+  if (rangeSlider) {
+    noUiSlider.create(rangeSlider, {
+      start: [100, 600],
+      connect: true,
+      step: 1,
+      range: {
+        'min': [100],
+        'max': [600]
+      }
+    });
+    const input0 = document.getElementById('input0');
+    const input1 = document.getElementById('input1');
+    const inputs = [input0, input1];
+    rangeSlider.noUiSlider.on('update', function (values, handle) {
+      inputs[handle].value = Math.round(values[handle]);
+    })
+    const setRangeSlider = (i, value) => {
+      let arr = [null, null];
+      arr[i] = value;
+      rangeSlider.noUiSlider.set(arr);
+    };
+
+    inputs.forEach((el, index, ) => {
+      el.addEventListener('change', (e) => {
+        setRangeSlider(index, e.currentTarget.value);
+      })
+    })
+  }
+}
+rangeSliders2();
+//-----------------range-slider-3------------------------
+function rangeSliders3() {
+  const rangeSlider = document.getElementById('range-slider-3');
+
+  if (rangeSlider) {
+    noUiSlider.create(rangeSlider, {
+      start: [100, 600],
+      connect: true,
+      step: 1,
+      range: {
+        'min': [100],
+        'max': [600]
+      }
+    });
+    const input0 = document.getElementById('input-length-0');
+    const input1 = document.getElementById('input-length-1');
+    const inputs = [input0, input1];
+    rangeSlider.noUiSlider.on('update', function (values, handle) {
+      inputs[handle].value = Math.round(values[handle]);
+    })
+    const setRangeSlider = (i, value) => {
+      let arr = [null, null];
+      arr[i] = value;
+      rangeSlider.noUiSlider.set(arr);
+    };
+
+    inputs.forEach((el, index, ) => {
+      el.addEventListener('change', (e) => {
+        setRangeSlider(index, e.currentTarget.value);
+      })
+    })
+  }
+}
+rangeSliders3();
+
+//-----------------range-slider-4------------------------
+function rangeSliders4() {
+  const rangeSlider = document.getElementById('range-slider-4');
+
+  if (rangeSlider) {
+    noUiSlider.create(rangeSlider, {
+      start: [100, 600],
+      connect: true,
+      step: 1,
+      range: {
+        'min': [100],
+        'max': [600]
+      }
+    });
+    const input0 = document.getElementById('input-length0-0');
+    const input1 = document.getElementById('input-lengt1-1');
+    const inputs = [input0, input1];
+    rangeSlider.noUiSlider.on('update', function (values, handle) {
+      inputs[handle].value = Math.round(values[handle]);
+    })
+    const setRangeSlider = (i, value) => {
+      let arr = [null, null];
+      arr[i] = value;
+      rangeSlider.noUiSlider.set(arr);
+    };
+
+    inputs.forEach((el, index, ) => {
+      el.addEventListener('change', (e) => {
+        setRangeSlider(index, e.currentTarget.value);
+      })
+    })
+  }
+}
+rangeSliders4();
+//------------------spoiler-------------------------------
+function spoilerCatalog() {
+  const spoilerTitle = document.querySelectorAll("[data-name='spoiler-title']");
+
+  spoilerTitle.forEach(function (item) {
+    item.addEventListener("click", spoilerTitleClick);
+  });
+
+  function spoilerTitleClick() {
+    this.nextElementSibling.classList.toggle("spoiler-body");
+  }
+}
+spoilerCatalog();
