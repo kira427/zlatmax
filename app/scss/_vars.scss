@@ -196,6 +196,9 @@ $pad: 10px;
 	line-height: 46px;
 	letter-spacing: 0.05em;
 	color: $color-dark;
+	@media (max-width: 360px) {
+		font-size: 26px;
+	}
 }
 
 %title {
@@ -239,7 +242,7 @@ $pad: 10px;
 	align-items: center;
 	gap: 15px;
 	height: 50px;
-  max-width: 220px;
+	max-width: 220px;
 	width: 100%;
 	border: none;
 	justify-content: center;
@@ -318,7 +321,7 @@ $pad: 10px;
 			height: 12px;
 			border-radius: 50%;
 			box-shadow: 0px 0px 10px 4px rgba(232, 170, 49, 0.66);
-      display: none;
+			display: none;
 		}
 	}
 	.swiper-pagination-bullet-active {
@@ -328,7 +331,7 @@ $pad: 10px;
 		&::before {
 			transition: left 3.5s linear 0s;
 			left: 26px;
-      display: block;
+			display: block;
 		}
 	}
 }

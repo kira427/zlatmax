@@ -90,7 +90,7 @@
 		width: 100%;
 		font-weight: 700;
 		font-size: 20px;
-		line-height: 24px;
+		line-height: 120%; /* 24px/20px */
 		color: $color-white;
 		background: $color-dark;
 		padding: 23px 30px;
