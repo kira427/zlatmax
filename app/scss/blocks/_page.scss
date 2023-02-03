@@ -3,6 +3,7 @@
 	}
 }
 .page-home {
+  margin-top: 10px;
 }
 .main-block {
 	background-image: url("../images/home-section-bg.jpg");
@@ -10,8 +11,6 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	padding: 44px 0 64px 0;
-	&__container {
-	}
 	&__body {
 		display: grid;
 		grid-template-columns: 720px 350px;
@@ -63,9 +62,6 @@
 		margin-bottom: 30px;
 	}
 
-	&__slide {
-	}
-
 	&__media {
 		@media (max-width: 685px) {
 			max-width: 400px;
@@ -73,12 +69,6 @@
 		@media (max-width: 545px) {
 			max-width: 350px;
 		}
-	}
-
-	&__advantages {
-	}
-
-	&__controll {
 	}
 }
 .controll-main-block {

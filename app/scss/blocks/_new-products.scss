@@ -106,6 +106,7 @@
 		height: 12px;
 		border-radius: 50%;
 		box-shadow: 0px 0px 10px 4px rgba(232, 170, 49, 0.66);
+    display: none;
 	}
 }
 .swiper-pagination-bullet-active {
@@ -115,6 +116,7 @@
 	&::before {
 		transition: left 3.5s linear 0s;
 		left: 26px;
+    display: block;
 	}
 }
 .content-title {

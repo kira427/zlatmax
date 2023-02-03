@@ -1,6 +1,9 @@
 .page {
 	&__header {
 		margin: 30px 0;
+		@media (max-width: 400px) {
+			margin: 15px 0;
+		}
 	}
 	&__container {
 	}
@@ -15,15 +18,6 @@
 
 .catalog {
 	margin-bottom: 120px;
-	@media (max-width: 500px) {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	@media (max-width: 500px) {
-		margin-bottom: 60px;
-	}
 	&__container {
 	}
 
@@ -31,52 +25,34 @@
 		display: grid;
 		align-items: start;
 		gap: 30px;
-		@media (min-width: 992px) {
-			grid-template-columns: 375px 1fr;
+		grid-template-columns: 375px 1fr;
+		@media (max-width: 992px) {
+			grid-template-columns: 1fr;
+		}
+		@media (max-width: 390px) {
+			display: block;
 		}
 	}
 
 	&__filter {
-		@media (max-width: 500px) {
-			max-width: 375px;
-			width: 100%;
-		}
-		@media (max-width: 410px) {
-			max-width: 330px;
-			width: 100%;
-		}
-		@media (max-width: 350px) {
-			max-width: 290px;
-			width: 100%;
-		}
 	}
-
 	&__content {
-		@media (max-width: 500px) {
-			max-width: 375px;
-			width: 100%;
-		}
-		@media (max-width: 410px) {
-			max-width: 330px;
-			width: 100%;
-		}
-		@media (max-width: 350px) {
-			max-width: 290px;
-			width: 100%;
-		}
 	}
 
 	&__control {
 		display: flex;
 		justify-content: flex-end;
 		margin-bottom: 20px;
+		@media (max-width: 650px) {
+			justify-content: center;
+		}
 	}
 
 	&__products {
 		display: grid;
 		column-gap: 30px;
 		row-gap: 30px;
-		grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
 	}
 
 	&__footer {
@@ -111,13 +87,16 @@
 	background: #fefefe;
 	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 	&__title {
+		width: 100%;
 		font-weight: 700;
 		font-size: 20px;
 		line-height: 24px;
 		color: $color-white;
 		background: $color-dark;
 		padding: 23px 30px;
-		margin-bottom: 10px;
+		@media (max-width: 390px) {
+			margin-bottom: 12px;
+		}
 	}
 	&__items {
 	}
@@ -144,9 +123,13 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		&._active ion-icon {
+			transform: rotate(180deg);
+		}
 		ion-icon {
 			color: $color-yellow;
 			font-size: 24px;
+			transition: transform 0.4s ease;
 		}
 		@media (max-width: 410px) {
 			padding: 13px 10px;
@@ -155,8 +138,8 @@
 	}
 	&__body {
 		padding: 20px 30px 20px 30px;
-		@media (max-width: 360px) {
-			padding: 20px 30px 20px 10px;
+		@media (max-width: 435px) {
+			padding: 10px 7px 15px 7px;
 		}
 	}
 

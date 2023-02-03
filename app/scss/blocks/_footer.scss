@@ -8,7 +8,7 @@
 	&__inner {
 		background: $color-dark;
 		padding: 100px 0 50px 0;
-		@media (max-width: 430px) {
+		@media (max-width: 992px) {
 			padding: 10px 0 20px 0;
 		}
 	}
@@ -57,11 +57,11 @@
 		grid-template-columns: repeat(4, 1fr);
 		column-gap: 20px;
 		padding-bottom: 30px;
-		@media (max-width: 895px) {
+		@media (max-width: 992px) {
 			grid-template-columns: repeat(2, 1fr);
-			row-gap: 35px;
+			row-gap: 10px;
 		}
-		@media (max-width: 430px) {
+		@media (max-width: 600px) {
 			grid-template-columns: repeat(1, 1fr);
 			row-gap: 15px;
 		}
@@ -86,6 +86,9 @@
 		}
 	}
 	&__copy {
+		@media (max-width: 370px) {
+			font-size: 12px;
+		}
 	}
 }
 .items-footer {
@@ -93,16 +96,7 @@
 		color: rgba(255, 255, 255, 0.8);
 	}
 }
-.items-footer-2 {
-	@media (max-width: 1000px) {
-		grid-template-columns: repeat(2, 1fr);
-		row-gap: 35px;
-	}
-	@media (max-width: 520px) {
-		grid-template-columns: repeat(1, 1fr);
-		row-gap: 15px;
-	}
-}
+
 .item-footer {
 	&__title-btn {
 		font-weight: $fw-600-SemiBold;
@@ -113,11 +107,27 @@
 		margin-bottom: 18px;
 		border: none;
 		background: $color-dark;
+		display: flex;
+		align-items: center;
+		gap: 20px;
 		transition: color 0.5s ease;
 		cursor: pointer;
+		&._active ion-icon {
+			transform: rotate(180deg);
+		}
 		&:hover {
 			color: $color-yellow;
 		}
+		ion-icon {
+			display: none;
+			@media (max-width: 992px) {
+				display: block;
+				font-size: 22px;
+				transform: rotate(90deg);
+				transition: transform 0.4s ease;
+			}
+		}
+
 		@media (max-width: 470px) {
 			font-size: 14px;
 			margin-bottom: 5px;
@@ -141,6 +151,10 @@
 		display: block;
 		color: rgba(255, 255, 255, 0.8);
 		margin-bottom: 20px;
+		@media (max-width: 992px) {
+			font-size: 12px;
+			margin-bottom: 10px;
+		}
 	}
 	&__line {
 		display: flex;
