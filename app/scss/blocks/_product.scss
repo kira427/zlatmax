@@ -17,47 +17,9 @@
 
 .page {
 	&__header {
+    margin: 10px 0;
 		@media (max-width: 400px) {
 			margin: 15px 0;
-		}
-	}
-	&__breadcrumbs {
-		&__list {
-			@media (max-width: 500px) {
-				gap: 5px;
-			}
-			ion-icon {
-				@media (max-width: 500px) {
-					font-size: 14px;
-				}
-				@media (max-width: 400px) {
-					font-size: 12px;
-				}
-			}
-		}
-		&__item {
-		}
-		&__link {
-			@media (max-width: 500px) {
-				font-size: 14px;
-			}
-			@media (max-width: 400px) {
-				font-size: 12px;
-			}
-			@media (max-width: 360px) {
-				font-size: 10px;
-			}
-		}
-		&__current {
-			@media (max-width: 500px) {
-				font-size: 14px;
-			}
-			@media (max-width: 400px) {
-				font-size: 12px;
-			}
-			@media (max-width: 360px) {
-				font-size: 10px;
-			}
 		}
 	}
 }
@@ -314,6 +276,8 @@
 		}
 	}
 	&__cart {
+		max-width: 700px;
+		width: 100%;
 	}
 }
 
@@ -345,8 +309,6 @@
 
 .button {
 	@extend %button;
-	max-width: 700px;
-	width: 100%;
 }
 .button-black {
 	background: $color-dark;
@@ -364,14 +326,16 @@
 			gap: 20px;
 		}
 		@media (max-width: 670px) {
-			grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      flex-direction: column;
+      align-items: start;
 			margin-bottom: 10px;
 			justify-items: left;
 			gap: 10px;
 		}
 	}
 	&__nav-btn {
-		font-weight: $fw-600-SemiBold;
+		font-weight: $fw-600-SemiBold;   
 		font-size: $fz-20;
 		line-height: 24px;
 		color: rgba(20, 20, 20, 0.5);
@@ -582,5 +546,4 @@
 }
 
 .block {
-  
 }

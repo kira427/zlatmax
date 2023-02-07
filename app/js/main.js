@@ -2,12 +2,11 @@
 function menuBodyOpen() {
   const menuBtn = document.querySelector('.js-menu-btn');
   const menuBody = document.querySelector('.js-top-menu__list');
-  const menuCatalogBtn = document.querySelector('.js-menu-catalog')
+  //const menuCatalogBtn = document.querySelector('.js-menu-catalog')
   menuBtn.addEventListener('click', function () {
     menuBtn.classList.toggle('active');
     menuBody.classList.toggle('menu-open');
     document.documentElement.classList.remove('catalor-open');
-    document.querySelector('.sub-menu-open').classList.remove('sub-menu-open');
     document.documentElement.classList.remove('_sub-menu-open');
   })
 }
@@ -133,18 +132,27 @@ const swiper = new Swiper(".main-block__slider", {
   slidesPerView: 1,
   spaceBetween: 40,
   loop: true,
-  speed: 1000,
+  speed: 1500,
   autoplay: {
-    delay: 5000,
+    delay: 2000,
     disableOnInteraction: false,
   },
   pagination: {
     el: ".controll-main-block__dotts",
     clickable: true,
   },
-  //------------------------счетчик-фракции--------------------------------
-  on: {
+
+ 
+  on: { 
     init: function (swiper) {
+      this.el.addEventListener('mouseenter', () => {
+        this.autoplay.stop();
+      });
+
+      this.el.addEventListener('mouseleave', () => {
+        this.autoplay.start();
+      });
+ //------------------------счетчик-фракции--------------------------------
       const allSlides = document.querySelector('.fraction-controll__all');
       const allSlidesItems = document.querySelectorAll('.slide-main-block:not(.swiper-slide-duplicate)');
       allSlides.innerHTML = allSlidesItems.length < 10 ? `0${allSlidesItems.length}` : allSlidesItems.length;
@@ -152,10 +160,11 @@ const swiper = new Swiper(".main-block__slider", {
     slideChange: function (swiper) {
       const currentSlide = document.querySelector('.fraction-controll__current');
       currentSlide.innerHTML = swiper.realIndex + 1 < 10 ? `0${swiper.realIndex + 1}` : swiper.realIndex + 1;
+    }, 
+    
     }
-  }
 });
-//-------------------------рейтинг звезд--------------------------------------------------
+//-------------------------рейтинг звезд---------------------------
 function ratingStars() {
   const ratings = document.querySelectorAll('.rating');
   if (ratings.length > 0) {
@@ -332,6 +341,77 @@ const galleryTop = new Swiper('.gallery-top', {
   thumbs: {
     swiper: galleryThumbs,
   },
+});
+
+//-------------------articles-slider----------------------------
+const swiperArticles = new Swiper(".articles-slider__swiper", {
+
+  observer: true,
+  observeParents: true,
+  slidesPerView: 2,
+  spaceBetween: 30,
+  loop: true,
+  speed: 3500,
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".new-products__slider-dotts",
+    clickable: true,
+  },
+  breakpoints: {
+
+    310: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    600: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+
+  },
+
+});
+//-------------------catalog-cards-slider----------------------------
+const swiperCatalogCards = new Swiper(".catalog-slider__swiper", {
+
+  observer: true,
+  observeParents: true,
+  slidesPerView: 2,
+  spaceBetween: 30,
+  loop: true,
+  speed: 5500,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".new-products__slider-dotts",
+    clickable: true,
+  },
+  breakpoints: {
+
+    310: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    790: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    991: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+
+  },
+
 });
 //--------------------select---------------------------------------------
 let select = function () {
@@ -681,7 +761,7 @@ function mySpollers() {
   }
 }
 mySpollers();
-//---------------------------------counter----------------------------
+//-------------------counter----------------------------
 
 function myCounter() {
   const btns = document.querySelectorAll('.counter__btn');
@@ -703,7 +783,7 @@ function myCounter() {
   })
 }
 myCounter();
-//--------------------------tabs--------------------
+//--------------------tabs--------------------
 function myTabs() {
   const tabsBtns = document.querySelectorAll('.tabs__nav-btn');
   const tabsItems = document.querySelectorAll('.tabs__item');
@@ -728,6 +808,6 @@ function myTabs() {
       }
     });
   });
-  document.querySelector('.tabs__nav-btn:nth-child(2)').click();
+  document.querySelector('.tabs__nav-btn').click();
 }
 myTabs();

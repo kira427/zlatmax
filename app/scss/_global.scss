@@ -118,26 +118,24 @@ input[type="number"] {
 //---------breadcrumbs-------------
 .breadcrumbs {
 	white-space: nowrap;
-	//overflow: auto;
-	//height: 22px;
+	overflow: auto;
+	height: 22px;
 	&__list {
 		display: flex;
 		line-height: 20px;
 		color: $color-dark;
 		align-items: center;
-		gap: 15px;
-		@media (max-width: 350px) {
-			gap: 5px;
-		}
+		@include adaptiv-value('gap', 15, 1, 0); 
 		ion-icon {
 			opacity: 0.5;
 			font-size: 18px;
+      
 		}
 	}
 	&__item {
 	}
 	&__link {
-    font-size: 16px;
+     @include adaptiv-value('font-size', 20, 12, 0);
 		opacity: 0.5;
 		transition: opacity 0.3s ease;
 		&:hover {
@@ -146,6 +144,7 @@ input[type="number"] {
 		}
 	}
 	&__current {
+    @include adaptiv-value('font-size', 20, 12, 0);
 		color: $color-yellow;
 	}
 }

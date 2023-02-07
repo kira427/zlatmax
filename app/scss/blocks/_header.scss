@@ -424,6 +424,9 @@
 			transform: rotate(180deg);
 			top: -6px;
 		}
+    @media(max-width: 992px) {
+      display: none;
+    }   
 	}
 	&__menu-list {
 		top: 100%;
@@ -622,6 +625,8 @@
 		top: 100%;
 		background-color: $color-dark;
 		transition: all 0.7s ease;
+    position: absolute;
+    z-index: 4;
 	}
 
 	.menu__btn-catalog {
